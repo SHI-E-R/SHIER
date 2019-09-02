@@ -8,21 +8,15 @@ router.get('/', function (req, res, next) {
   });
 });
 
-router.get('/aa', function (req, res, next) {
-  res.send('ooooooooo')
-});
-
 router.get('/show', async (req, res, next) => {
   console.log(req.session.user)
-  res.send('hhhhhhhhhhhhh')
-  // try {
-  //   console.log(req.session.user)
-  //   let result = await require('../services/user').show();
-  //   // res.send(result);
-  //   res.send('hhhhh');
-  // } catch (e) {
-  //   res.send(e);
-  // }
+  try {
+    console.log(req.session.user)
+    let result = await require('../services/user').show();
+    res.send(result);
+  } catch (e) {
+    res.send(e);
+  }
 })
 
 module.exports = router;
