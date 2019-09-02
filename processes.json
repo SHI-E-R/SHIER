@@ -1,6 +1,6 @@
 {
   "apps": [{
-    "name": "shier",
+    "name": "myapp",
     "cwd": "/root/SHIER",
     "script": "bin/www",
     "log_date_format": "YYYY-MM-DD HH:mm:SS",
