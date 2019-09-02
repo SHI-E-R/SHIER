@@ -10,7 +10,7 @@ router.get('/', function (req, res, next) {
 
 router.get('/show', async (req, res, next) => {
   try {
-    let result = await require('../services/user').show();
+    let result = await require('../services/users').show();
     res.send(result);
   } catch (e) {
     res.send(e);
