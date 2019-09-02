@@ -9,9 +9,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/show', async (req, res, next) => {
-  console.log(req.session.user)
   try {
-    console.log(req.session.user)
     let result = await require('../services/user').show();
     res.send(result);
   } catch (e) {
