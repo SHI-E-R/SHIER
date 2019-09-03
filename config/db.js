@@ -3,7 +3,8 @@ var pool = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "123456",
-    database: "shier"
+    database: "shier",
+    port: '3306'
 }) //数据库连接配置
 
 function query(sql, callback) {
