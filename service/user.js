@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 const db = require('../config/db')
 
-var mys = require('mysql');
-mys.connect('mysql://localhost:3306/shier', function (err) {
+var mysql = require('mysql');
+mysql.connect('mysql://localhost:3306/shier', function (err) {
     if (err) {
         console.log(err, "数据库连接失败");
         return;
@@ -21,7 +21,7 @@ mys.connect('mysql://localhost:3306/shier', function (err) {
 
 let show = () => {
     return new Promise((resolve, reject) => {
-        db.query('select * from user', (err, rows) => {
+        pool.query('select * from user', (err, rows) => {
             if (err) {
                 reject(err);
                 console.log('出错了哦');
