@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
-const db = require('../config/db')
+var app = express();
+var connection = require('../config/db') 
 
-var mysql = require('mysql');
-pool.connect((err) => {
+connection.connect((err) => {
     if (err) {
         console.log(err, "数据库连接失败");
         return;
@@ -19,9 +19,18 @@ pool.connect((err) => {
     });
 });
 
+//设置跨域访问
+app.all('*', function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+    res.header("Content-Type", "application/json;charset=utf-8");
+    next();
+});
+
 let show = () => {
     return new Promise((resolve, reject) => {
-        pool.query('select * from user', (err, rows) => {
+        connection.query('select * from user', (err, rows) => {
             if (err) {
                 reject(err);
                 console.log('出错了哦');

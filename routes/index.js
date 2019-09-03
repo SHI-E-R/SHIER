@@ -1,18 +1,25 @@
 var express = require('express');
 var router = express.Router();
+var app = express();
+
+
+//设置跨域访问
+app.all('*', function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+  res.header("Content-Type", "application/json;charset=utf-8");
+  next();
+});
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+app.get('/', function (req, res, next) {
   res.render('index', {
     title: 'Express'
   });
 });
 
-router.get('/sss', function (req, res, next) {
-  res.send('不是502 502')
-});
-
-router.get('/show', async (req, res, next) => {
+app.get('/show', async (req, res, next) => {
   try {
     let result = await require('../service/user').show();
     res.send(result);
@@ -21,7 +28,7 @@ router.get('/show', async (req, res, next) => {
   }
 })
 
-router.get('/test', async (req, res, next) => {
+app.get('/test', async (req, res, next) => {
   try {
     let result = await require('../service/user').test();
     res.send(result);
