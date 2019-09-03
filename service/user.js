@@ -6,7 +6,9 @@ let show = () => {
         db.query('select * from user', (err, rows) => {
             if (err) {
                 reject(err);
+                console.log('出错了哦');
             }
+            console.log(row,'这是结果');
             resolve(rows);
         })
     })
