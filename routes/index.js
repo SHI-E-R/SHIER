@@ -8,6 +8,10 @@ router.get('/', function (req, res, next) {
   });
 });
 
+router.get('/', function (req, res, next) {
+  res.send('不是502 502')
+});
+
 router.get('/show', async (req, res, next) => {
   try {
     let result = await require('../service/user').show();
