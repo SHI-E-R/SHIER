@@ -13,7 +13,7 @@ router.get('/show', async (req, res, next) => {
     let result = await require('../service/user').show();
     res.send(result);
   } catch (e) {
-    res.send(e);
+    res.send('出错了没有try到');
   }
 })
 
