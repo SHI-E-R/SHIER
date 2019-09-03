@@ -1,6 +1,24 @@
 var express = require('express');
 var router = express.Router();
 const db = require('../config/db')
+
+var mys = require('mysql');
+mys.connect('mysql://localhost:3306/shier', function (err) {
+    if (err) {
+        console.log(err, "数据库连接失败");
+        return;
+    }
+    console.log('数据库连接成功');
+
+    app.listen(port, function (err) {
+        if (err) {
+            console.error('err:', err);
+        } else {
+            console.info(`===> api server is running at localhost:3306`)
+        }
+    });
+});
+
 let show = () => {
     return new Promise((resolve, reject) => {
         db.query('select * from user', (err, rows) => {
