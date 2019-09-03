@@ -8,7 +8,7 @@ router.get('/', function (req, res, next) {
   });
 });
 
-router.get('/', function (req, res, next) {
+router.get('/sss', function (req, res, next) {
   res.send('不是502 502')
 });
 
