@@ -14,4 +14,11 @@ let show = () => {
     })
 }
 
+let test = () => {
+    return new Promise((resolve, reject) => {
+        console.log('测试导入问题');
+    })
+}
+
 exports.show = show
+exports.test = test

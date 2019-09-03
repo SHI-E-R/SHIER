@@ -17,4 +17,13 @@ router.get('/show', async (req, res, next) => {
   }
 })
 
+router.get('/test', async (req, res, next) => {
+  try {
+    let result = await require('../service/user').test();
+    res.send(result);
+  } catch (e) {
+    res.send(e);
+  }
+})
+
 module.exports = router;
