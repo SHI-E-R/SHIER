@@ -4,7 +4,7 @@ var app = express();
 var connection = require('../config/db') 
 var conn = connection.connection
 
-conn.connection();
+conn.connect();
 
 // conn.connection.connect((err) => {
 //     if (err) {
