@@ -35,11 +35,10 @@ let show = () => {
     return new Promise((resolve, reject) => {
         conn.query('select * from user', (err, rows) => {
             if (err) {
-                reject(err);
+                reject('出错了哦');
                 console.log('出错了哦');
             }
-            console.log(row,'这是结果');
-            resolve('没有结果啊');
+            resolve(rows)
         })
     })
 }
