@@ -3,21 +3,23 @@ var router = express.Router();
 var app = express();
 var connection = require('../config/db') 
 
-connection.connect((err) => {
-    if (err) {
-        console.log(err, "数据库连接失败");
-        return;
-    }
-    console.log('数据库连接成功');
+connection.connect();
 
-    app.listen(port, function (err) {
-        if (err) {
-            console.error('err:', err);
-        } else {
-            console.info(`===> api server is running at localhost:3306`)
-        }
-    });
-});
+// connection.connect((err) => {
+//     if (err) {
+//         console.log(err, "数据库连接失败");
+//         return;
+//     }
+//     console.log('数据库连接成功');
+
+//     app.listen(port, function (err) {
+//         if (err) {
+//             console.error('err:', err);
+//         } else {
+//             console.info(`===> api server is running at localhost:3306`)
+//         }
+//     });
+// });
 
 //设置跨域访问
 app.all('*', function (req, res, next) {
