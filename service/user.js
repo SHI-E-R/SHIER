@@ -41,11 +41,14 @@ let show = () => {
     })
 }
 
+// let test = () => {
+//     return new Promise((resolve, reject) => {
+//         console.log('测试导入问题');
+//         resolve('test测试成功')
+//     })
+// }
 let test = () => {
-    return new Promise((resolve, reject) => {
-        console.log('测试导入问题');
-        resolve('test测试成功')
-    })
+    return('test测试成功')
 }
 
 exports.show = show
