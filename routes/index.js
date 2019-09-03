@@ -18,13 +18,4 @@ router.get('/show', async (req, res, next) => {
   }
 })
 
-router.get('/test', async (req, res, next) => {
-  try {
-    let result = 'wo cao';
-    res.send(result);
-  } catch (e) {
-    res.send(e);
-  }
-})
-
 module.exports = router;
