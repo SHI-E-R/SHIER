@@ -3,7 +3,7 @@ var router = express.Router();
 const db = require('../config/db')
 
 var mysql = require('mysql');
-mysql.connect('mysql://localhost:3306/shier', function (err) {
+pool.connect((err) => {
     if (err) {
         console.log(err, "数据库连接失败");
         return;

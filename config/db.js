@@ -4,7 +4,8 @@ var pool = mysql.createPool({
     user: "root",
     password: "123456",
     database: "shier",
-    port: '3306'
+    port: '3306',
+    connectTimeout: '2000',
 }) //数据库连接配置
 
 // function query(sql, callback) {
