@@ -3,8 +3,6 @@ var router = express.Router();
 var connection = require('../config/db') 
 var conn = connection.connection
 
-conn.connect();
-
 let addArticle = (title,remake) => {
     return new Promise((resolve, reject) => {
         conn.query(`INSERT INTO article(title,remake) VALUES (${title},${remake})`, (err, rows) => {

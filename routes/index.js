@@ -18,7 +18,7 @@ router.get('/show', async (req, res, next) => {
   }
 })
 
-router.post('/addArticle', async (req, res, next) => {
+router.get('/addArticle', async (req, res, next) => {
   try {
     const param = req.params
     console.log(param)
