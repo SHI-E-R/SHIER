@@ -43,7 +43,7 @@ let selectArticle = () => {
 // 删除
 let deleteArticle = (params) => {
     return new Promise((resolve, reject) => {
-        let sql = `DELETE FROM article WHERE ${id} = ${params.id}`
+        let sql = `DELETE FROM article WHERE id = ${params.id}`
         conn.query(sql, (err, rows) => {
             if (err) {
                 reject(err);
