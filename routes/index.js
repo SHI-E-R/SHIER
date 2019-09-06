@@ -25,7 +25,7 @@ router.get('/addArticle', async (req, res, next) => {
     let result = await api.addArticle(param);
     res.send(result);
   } catch (e) {
-    res.send('出错了没有try到');
+    res.send(e);
   }
 })
 
