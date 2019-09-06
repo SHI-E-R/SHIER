@@ -16,6 +16,7 @@ let show = () => {
     })
 }
 
+// 新增
 let addArticle = (params) => {
     return new Promise((resolve, reject) => {
         conn.query(`INSERT INTO article(title,remake) VALUES ('${params.title}', '${params.remake}')`, (err, rows) => {
@@ -27,6 +28,7 @@ let addArticle = (params) => {
     })
 }
 
+// 查询
 let selectArticle = () => {
     return new Promise((resolve, reject) => {
         conn.query(`select * from article`, (err, rows) => {
@@ -38,6 +40,9 @@ let selectArticle = () => {
     })
 }
 
-exports.show = show
-exports.addArticle = addArticle
-exports.selectArticle = selectArticle
+
+module.exports = {
+    show,
+    addArticle,
+    selectArticle
+}
