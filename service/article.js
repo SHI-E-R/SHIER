@@ -5,7 +5,7 @@ var conn = connection.connection
 
 let addArticle = (title,remake) => {
     return new Promise((resolve, reject) => {
-        conn.query(`INSERT INTO article(title,remake) VALUES (${title},${remake})`, (err, rows) => {
+        conn.query(`INSERT INTO article(title,remake) VALUES ('${title}','${remake}')`, (err, rows) => {
             if (err) {
                 reject('出错了哦');
             }
