@@ -27,7 +27,7 @@ let addArticle = (params) => {
     })
 }
 
-let selectArticle = (params) => {
+let selectArticle = () => {
     return new Promise((resolve, reject) => {
         conn.query(`select * from article`, (err, rows) => {
             if (err) {
@@ -40,3 +40,4 @@ let selectArticle = (params) => {
 
 exports.show = show
 exports.addArticle = addArticle
+exports.selectArticle = selectArticle
