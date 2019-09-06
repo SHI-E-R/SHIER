@@ -16,9 +16,9 @@ let show = () => {
     })
 }
 
-let addArticle = (title,remake) => {
+let addArticle = (params) => {
     return new Promise((resolve, reject) => {
-        conn.query(`INSERT INTO article(title,remake) VALUES (${title},${remake})`, (err, rows) => {
+        conn.query(`INSERT INTO article(title,remake) VALUES (${params.title},${params.remake})`, (err, rows) => {
             if (err) {
                 reject('出错了哦');
             }

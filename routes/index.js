@@ -20,9 +20,9 @@ router.get('/show', async (req, res, next) => {
 
 router.get('/addArticle', async (req, res, next) => {
   try {
-    const param = req
+    const param = req.query
     console.log(param)
-    let result = await api.addArticle(param[0], param[1]);
+    let result = await api.addArticle(param);
     res.send(result);
   } catch (e) {
     res.send('出错了没有try到');
