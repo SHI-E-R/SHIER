@@ -49,4 +49,15 @@ router.get('/deleteArticle', async (req, res, next) => {
   }
 })
 
+router.get('/updateArticle', async (req, res, next) => {
+  try {
+    const param = req.query
+    console.log(param)
+    let result = await api.updateArticle(param);
+    res.send(result);
+  } catch (e) {
+    res.send(e);
+  }
+})
+
 module.exports = router;

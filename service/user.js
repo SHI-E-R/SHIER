@@ -53,10 +53,24 @@ let deleteArticle = (params) => {
     })
 }
 
+// 改
+let updateArticle = (params) => {
+    return new Promise((resolve, reject) => {
+        let sql = `update article set title = '${params.title}', remake = '${params.remake}' where id = '${params.id}`
+        conn.query(sql, (err, rows) => {
+            if (err) {
+                reject(err);
+            }
+            resolve(rows)
+        })
+    })
+}
+
 
 module.exports = {
     show,
     addArticle,
     selectArticle,
-    deleteArticle
+    deleteArticle,
+    updateArticle
 }
