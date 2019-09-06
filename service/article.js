@@ -16,4 +16,4 @@ let addArticle = (title,remake) => {
     })
 }
 
-exports.show = show
+exports.addArticle = addArticle
