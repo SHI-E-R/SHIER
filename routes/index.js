@@ -29,4 +29,13 @@ router.get('/addArticle', async (req, res, next) => {
   }
 })
 
+router.get('/selectArticle', async (req, res, next) => {
+  try {
+    let result = await api.selectArticle();
+    res.send(result);
+  } catch (e) {
+    res.send(e);
+  }
+})
+
 module.exports = router;
