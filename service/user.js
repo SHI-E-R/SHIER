@@ -40,9 +40,23 @@ let selectArticle = () => {
     })
 }
 
+// 删除
+let deleteArticle = (params) => {
+    return new Promise((resolve, reject) => {
+        let sql = `DELETE FROM article WHERE ${id} = ${params.id}`
+        conn.query(sql, (err, rows) => {
+            if (err) {
+                reject(err);
+            }
+            resolve(rows)
+        })
+    })
+}
+
 
 module.exports = {
     show,
     addArticle,
-    selectArticle
+    selectArticle,
+    deleteArticle
 }

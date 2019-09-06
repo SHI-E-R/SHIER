@@ -38,4 +38,15 @@ router.get('/selectArticle', async (req, res, next) => {
   }
 })
 
+router.get('/deleteArticle', async (req, res, next) => {
+  try {
+    const param = req.query
+    console.log(param)
+    let result = await api.deleteArticle(param);
+    res.send(result);
+  } catch (e) {
+    res.send(e);
+  }
+})
+
 module.exports = router;
