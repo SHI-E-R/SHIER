@@ -20,7 +20,7 @@ let addArticle = (params) => {
     return new Promise((resolve, reject) => {
         conn.query(`INSERT INTO article(title,remake) VALUES (${params.title},${params.remake})`, (err, rows) => {
             if (err) {
-                reject('出错了哦');
+                reject(err);
             }
             resolve(rows)
         })
